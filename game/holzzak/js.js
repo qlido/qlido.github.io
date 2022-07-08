@@ -1,6 +1,8 @@
 function gohome(){
+    zmoney();
     window.location.href = "../../index.html";
 }
+
 let bet = 0;
 let money = parseInt(localStorage.getItem("money"));
 document.getElementById("moneyshow").innerHTML = `<h1 id="money">${money}원 보유중</h1>`;
@@ -9,6 +11,7 @@ let ranbae = parseInt(localStorage.getItem("ranbae"));
 if(ranbae>100){
     document.getElementById("baedang").innerHTML = `${ranbae}%`;
 }else {
+    zmoney();
     ranbae = Math.round(Math.random() * 300);
     if (ranbae < 100) {
         ranbae += 100;
@@ -16,7 +19,9 @@ if(ranbae>100){
     localStorage.setItem("ranbae", ranbae);
     document.getElementById("baedang").innerHTML = `${ranbae}%`;
 }
+
 function holzzakgame(cho) {
+
     let bet = parseInt(localStorage.getItem("bet"));
     if (bet == null || bet === 0) {
         alert("베팅하세요");
@@ -24,6 +29,7 @@ function holzzakgame(cho) {
     } else {
         let num = Math.round(Math.random() * 100 + 1);
         if (num % 2 === cho) {
+
             money = money + Math.round(bet * (ranbae / 100));
             localStorage.setItem("bet", 0);
             localStorage.setItem("money", money);
@@ -42,5 +48,13 @@ function holzzakgame(cho) {
     }
 }
 function popup(){
+    zmoney();
     window.open("../betting.html", "베팅하기", "width = 300, height = 500, top = 100, left = 200, status = no, resizable = no, scrollbars = no, toolbars=no");
+}
+function zmoney(){
+    if (money == 0) {
+        money = 10000;
+        localStorage.setItem("money", money);
+        document.getElementById("moneyshow").innerHTML = `<h1 id="money">${money}원 보유중</h1>`;
+    }
 }
