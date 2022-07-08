@@ -1,0 +1,30 @@
+#btn {
+    display: block;
+}
+#btn button{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    padding: 150px;
+    border-radius: 100%;
+    margin-top: 45px;
+
+}
+#hol {
+    margin-left: 100px;
+}
+#zzak {
+    float: right;
+    margin-right: 30px;
+}
+
+#btndiv {
+    position: relative;
+    bottom: 0;
+}
+#popupbtn {
+
+}
+#gamestart{
+
+}
