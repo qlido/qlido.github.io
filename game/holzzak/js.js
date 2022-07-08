@@ -2,15 +2,20 @@ function gohome(){
     window.location.href = "../../index.html";
 }
 let bet = 0;
-let money = localStorage.getItem("money");
+let money = parseInt(localStorage.getItem("money"));
 document.getElementById("moneyshow").innerHTML = `<h1 id="money">${money}원 보유중</h1>`;
 
-let ranbae = Math.round(Math.random() * 300);
-if(ranbae < 100){
-    ranbae += 100;
+let ranbae = parseInt(localStorage.getItem("ranbae"));
+if(ranbae>100){
+    document.getElementById("baedang").innerHTML = `${ranbae}%`;
+}else {
+    ranbae = Math.round(Math.random() * 300);
+    if (ranbae < 100) {
+        ranbae += 100;
+    }
+    localStorage.setItem("ranbae", ranbae);
+    document.getElementById("baedang").innerHTML = `${ranbae}%`;
 }
-document.getElementById("baedang").innerHTML = `${ranbae}%`;
-
 function holzzakgame(cho) {
     let bet = parseInt(localStorage.getItem("bet"));
     if (bet == null || bet === 0) {
@@ -29,7 +34,7 @@ function holzzakgame(cho) {
             alert("성공!");
         } else {
             alert("실패!");
-
+            localStorage.setItem("bet", 0);
             document.getElementById("moneyshow").innerHTML = `<h1 id="money">${money}원 보유중</h1>`;
             console.log("오답");
             console.log(num);
