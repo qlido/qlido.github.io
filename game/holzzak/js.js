@@ -1,8 +1,11 @@
+
 function gohome(){
     zmoney();
     window.location.href = "../../index.html";
 }
-
+function test(){
+    swal("Hello world!");
+}
 let bet = 0;
 let money = parseInt(localStorage.getItem("money"));
 document.getElementById("moneyshow").innerHTML = `<h1 id="money">${money}원 보유중</h1>`;
@@ -24,10 +27,24 @@ function holzzakgame(cho) {
 
     let bet = parseInt(localStorage.getItem("bet"));
     if (bet == null || bet === 0) {
-        alert("베팅하세요");
-        popup();
+        Swal.fire({
+            title: '베팅하세요!',
+            text: "배팅을 하셔야 게임을 진행 하실수 있습니다",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '베팅할게요!',
+            cancelButtonText: '안해!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                popup();
+            }
+        })
+
     } else {
         let num = Math.round(Math.random() * 100 + 1);
+        document.getElementById("num").innerHTML = num;
         if (num % 2 === cho) {
 
             money = money + Math.round(bet * (ranbae / 100));

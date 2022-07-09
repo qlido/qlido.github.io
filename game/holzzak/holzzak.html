@@ -5,6 +5,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="../../GSS/HEAD.css">
     <link rel="stylesheet" href="holzzak.css">
+    <script defer src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script defer src="./js.js"></script>
 </head>
 <body>
@@ -16,13 +17,16 @@
     </div>
     <div id="moneyshow">adsf</div>
 </div>
+<div id="main">
+
 <div id="btn">
 <button id="hol" value="홀" onclick="holzzakgame(false)">홀</button>
+    <h1>숫자: <span id="num"><b>???</b></span></h1>
 <button id="zzak" value="짝" onclick="holzzakgame(0)">짝</button>
 </div>
 <div id="btndiv">
-    <button id="popupbtn" onclick="popup()">배팅하기</button>
-    <button id="gameStart">게임시작</button>
+    <button id="popupbtn" class="custom-btn btn-6" onclick="popup()"><span>betting</span></button>
+</div>
 </div>
 </body>
 </html>
