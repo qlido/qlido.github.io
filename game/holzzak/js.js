@@ -6,9 +6,11 @@ function gohome(){
 function test(){
     swal("Hello world!");
 }
-let bet = 0;
+let bet = parseInt(localStorage.getItem("bet"));
 let money = parseInt(localStorage.getItem("money"));
 document.getElementById("moneyshow").innerHTML = `<h1 id="money">${money}원 보유중</h1>`;
+
+document .getElementById("betting").innerHTML = `${bet}원 베팅함`
 
 let ranbae = parseInt(localStorage.getItem("ranbae"));
 if(ranbae>100){
@@ -27,7 +29,7 @@ function changeRanbae(){
 }
 function holzzakgame(cho) {
 
-    let bet = parseInt(localStorage.getItem("bet"));
+
     if (bet == null || bet === 0) {
         Swal.fire({
             title: '베팅하세요!',
