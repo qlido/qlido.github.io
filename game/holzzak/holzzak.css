@@ -1,3 +1,5 @@
+
+
 #main {
     display: flex;
     flex-direction: column;
@@ -5,7 +7,9 @@
     align-content: space-between;
     height: 80vh;
 }
-
+#baedangdiv h1{
+    font-family: 'Jua', sans-serif;
+}
 
 #btn {
     display: flex;
@@ -36,12 +40,16 @@
 
 }
 
-#btn button:hover {
+#btn #hol:hover {
     color: white;
-    background-color: slategrey;
+    background-color: royalblue;
 
 }
+#btn #zzak:hover {
+    color: white;
+    background-color: palevioletred;
 
+}
 
 #btndiv {
     display: flex;
