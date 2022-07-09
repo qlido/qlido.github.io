@@ -22,19 +22,24 @@
 }
 
 #btn button {
-    display: inline-block;
+    display: flex;
     width: 100px;
     height: 100px;
     padding: 200px;
     border-radius: 100%;
     margin-top: 45px;
+    font-size: 5em;
+    text-align: center;
+    overflow: hidden;
+    align-items:center;
+    justify-content: center;
 
 }
 
 #btn button:hover {
     color: white;
     background-color: slategrey;
-    
+
 }
 
 

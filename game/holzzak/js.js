@@ -15,6 +15,9 @@ if(ranbae>100){
     document.getElementById("baedang").innerHTML = `${ranbae}%`;
 }else {
     zmoney();
+    changeRanbae();
+}
+function changeRanbae(){
     ranbae = Math.round(Math.random() * 300);
     if (ranbae < 100) {
         ranbae += 100;
@@ -22,7 +25,6 @@ if(ranbae>100){
     localStorage.setItem("ranbae", ranbae);
     document.getElementById("baedang").innerHTML = `${ranbae}%`;
 }
-
 function holzzakgame(cho) {
 
     let bet = parseInt(localStorage.getItem("bet"));
@@ -62,6 +64,8 @@ function holzzakgame(cho) {
             console.log("오답");
             console.log(num);
         }
+        changeRanbae();
+
     }
 }
 function popup(){
@@ -70,7 +74,7 @@ function popup(){
 }
 function zmoney(){
     if (money == 0) {
-        money = 10000;
+        money = 1000000;
         localStorage.setItem("money", money);
         document.getElementById("moneyshow").innerHTML = `<h1 id="money">${money}원 보유중</h1>`;
     }
